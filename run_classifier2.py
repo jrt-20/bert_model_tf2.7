@@ -524,7 +524,7 @@ def file_based_input_fn_builder(input_file, seq_length, is_training,
 
     # tf.Example only supports tf.int64, but the TPU only supports tf.int32.
     # So cast all int64 to int32.
-    for name in list(examPle.keys()):
+    for name in list(example.keys()):
       t = example[name]
       if t.dtype == tf.int64:
         t = tf.to_int32(t)
